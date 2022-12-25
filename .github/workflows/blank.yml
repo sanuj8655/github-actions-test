@@ -16,7 +16,8 @@ jobs:
             ref: main
       - name: Create report file
         run: date +%s > report.txt
-      - run : |
+      - name: Creating Release branch
+        run : |
           git config --global push.default current
           git checkout -b release-20221226 main
           git config --global user.name 'Anuj Sharma'
