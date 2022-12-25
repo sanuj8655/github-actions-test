@@ -8,17 +8,22 @@ on:
 
 jobs:
   build:
-    name: Trigger Code Checkout
+    name: Deploy Release Code
     runs-on: ubuntu-latest
     steps:
+      - name: Git Checkout to main/develop branch
       - uses: actions/checkout@v3
         with:
             ref: main
+      # Added to test commiting of file
       - name: Create report file
         run: date +%s > report.txt
+      - name: Getting current date
+        run: echo "TODAY=$(date +'%Y%m%d')" >> $GITHUB_ENV
+      - name: Creating Release Branch
       - run : |
           git config --global push.default current
-          git checkout -b release-20221226 main
+          git checkout -b release_1-${{ env.TODAY }} main
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
           git add .
