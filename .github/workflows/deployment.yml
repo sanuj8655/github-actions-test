@@ -17,6 +17,7 @@ jobs:
       - name: Create report file
         run: date +%s > report.txt
       - run : |
+          git checkout -b release-20221226 main
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
           git add .
