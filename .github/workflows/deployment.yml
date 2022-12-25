@@ -11,6 +11,8 @@ jobs:
     name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
+      - run : echo "Hello"
       - uses: actions/checkout@v3
         with:
-            ref: my-branch
+            ref: main
+
