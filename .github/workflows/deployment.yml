@@ -11,8 +11,12 @@ jobs:
     name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
-      - run : echo "Hello"
       - uses: actions/checkout@v3
         with:
-            ref: main
-
+            ref: develop
+      - run :
+          touch test.txt
+          git add .
+          git commit -m "1st auto commit"
+          git push
+          git pull
