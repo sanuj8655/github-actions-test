@@ -14,9 +14,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
             ref: develop
-      - run :
-          touch test.txt
-          git add .
-          git commit -m "1st auto commit"
+      - run : |
+          git config --global user.name 'Anuj Sharma'
+          git config --global user.email 'sanuj8655@gmail.com'
+          git commit -am "Automated report"
           git push
-          git pull
