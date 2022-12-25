@@ -19,5 +19,6 @@ jobs:
       - run : |
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
+          git add .
           git commit -am "Automated report"
           git push
