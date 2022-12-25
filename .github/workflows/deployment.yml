@@ -21,7 +21,7 @@ jobs:
       - name: Getting current date
         run: echo "TODAY=$(date +'%Y%m%d')" >> $GITHUB_ENV
       - name: Creating Release Branch
-      - run : |
+        run : |
           git config --global push.default current
           git checkout -b release_1-${{ env.TODAY }} main
           git config --global user.name 'Anuj Sharma'
