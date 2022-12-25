@@ -6,14 +6,14 @@ on:
     - cron: "*/5 * * * 1-5"
   workflow_dispatch:
 
-jobs:
-  build:
-    name: Trigger Code Checkout
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: main
+# jobs:
+#   build:
+#     name: Trigger Code Checkout
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           ref: main
       # - name: Create report file
       #   run: date +%s > report.txt
       # - name: Creating Release branch
