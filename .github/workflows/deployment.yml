@@ -33,4 +33,4 @@ jobs:
           type: now
           from_branch: main
           target_branch: release-20221226
-          # github_token: release-${{ env.TODAY }}
+          github_token: ${{ github.token }}
