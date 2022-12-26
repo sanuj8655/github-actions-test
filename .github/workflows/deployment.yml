@@ -20,8 +20,8 @@ jobs:
           git config --global push.default current
       - run: |
           # git checkout -b release-${{ env.TODAY }} main
-          # git config --global user.name 'Anuj Sharma'
-          # git config --global user.email 'sanuj8655@gmail.com'
+          git config --global user.name 'Anuj Sharma'
+          git config --global user.email 'sanuj8655@gmail.com'
           # date +%s > report1.txt
           # git add .
           # git commit -am "Automated report"
