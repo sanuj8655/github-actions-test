@@ -18,8 +18,8 @@ jobs:
       #   run: date +%s > report1.txt
       - run: |
           git config --global push.default current
-          echo "TODAY=$(date +%Y%m%d)" >> $GITHUB_ENV
-          git checkout -b release-${{ env.TODAY }} main
+          echo "builddate=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          git checkout -b release-${{ steps.version.outputs.builddate }} main
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
           date +%s > report1.txt
