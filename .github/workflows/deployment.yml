@@ -19,7 +19,7 @@ jobs:
       - run: |
           git config --global push.default current
       - run: |
-          git checkout -b release_1-${{ env.TODAY }} main
+          git checkout -b release-${{ env.TODAY }} main
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
           date +%s > report1.txt
@@ -27,9 +27,9 @@ jobs:
           git commit -am "Automated report"
           git push
 
-      - name: Merge develop -> release
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: main
-          target_branch: release_1-${{ env.TODAY }}
+      # - name: Merge develop -> release
+      #   uses: devmasx/merge-branch@master
+      #   with:
+      #     type: now
+      #     from_branch: main
+      #     target_branch: release-${{ env.TODAY }}
