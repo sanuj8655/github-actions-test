@@ -18,6 +18,7 @@ jobs:
       #   run: date +%s > report1.txt
       - run: |
           git config --global push.default current
+      - run : |
           echo "builddate=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
           echo $builddate
           # git checkout -b release-${{ steps.version.outputs.builddate }} main
