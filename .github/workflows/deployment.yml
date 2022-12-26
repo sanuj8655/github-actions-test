@@ -27,9 +27,9 @@ jobs:
           git commit -am "Automated report"
           git push
 
-      # - name: Merge develop -> release
-      #   uses: devmasx/merge-branch@master
-      #   with:
-      #     type: now
-      #     from_branch: main
-      #     target_branch: release-${{ env.TODAY }}
+      - name: Merge develop -> release
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: main
+          target_branch: release-${{ env.TODAY }}
