@@ -32,4 +32,4 @@ jobs:
         with:
           type: now
           from_branch: main
-          target_branch: release-${{ env.TODAY }}
+          target_branch: release_1-${{ env.TODAY }}
