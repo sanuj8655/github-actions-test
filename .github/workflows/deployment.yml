@@ -19,16 +19,18 @@ jobs:
       - run: |
           git config --global push.default current
       - run: |
-          git checkout -b release-${{ env.TODAY }} main
-          git config --global user.name 'Anuj Sharma'
-          git config --global user.email 'sanuj8655@gmail.com'
-          date +%s > report1.txt
-          git add .
-          git commit -am "Automated report"
-          git push
+          # git checkout -b release-${{ env.TODAY }} main
+          # git config --global user.name 'Anuj Sharma'
+          # git config --global user.email 'sanuj8655@gmail.com'
+          # date +%s > report1.txt
+          # git add .
+          # git commit -am "Automated report"
+          # git push
 
-      - name: Merge develop -> release
-        uses: everlytic/branch-merge@1.1.2
+      - name: Merge staging -> uat
+        uses: devmasx/merge-branch@master
         with:
-          source_ref: "main"
-          target_branch: release-${{ env.TODAY }}
+          type: now
+          from_branch: main
+          target_branch: uat
+          github_token: release-${{ env.TODAY }}
