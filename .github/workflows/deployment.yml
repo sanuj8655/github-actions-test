@@ -21,8 +21,8 @@ jobs:
       - run: |
           git config --global push.default current
       - run : |
-          echo "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
-          echo ${{ env.date }}
+          echo "builddate=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo ${{ steps.version.outputs.builddate }}
           echo ${{env.TODAY}}
           # git checkout -b release-${{ steps.version.outputs.builddate }} main
           # git config --global user.name 'Anuj Sharma'
