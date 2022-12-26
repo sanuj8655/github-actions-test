@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     env:
-      TODAY : "$(date +%Y%m%d)"
+      TODAY: "$(date +%Y%m%d)"
     name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +18,8 @@ jobs:
           ref: main
       - run: |
           git config --global push.default current
-      - run : |
-          git checkout -b release-${{ env.TODAY }} main
+      - run: |
+          git checkout -b release_1-${{ env.TODAY }} main
           git config --global user.name 'Anuj Sharma'
           git config --global user.email 'sanuj8655@gmail.com'
           date +%s > report1.txt
@@ -33,4 +33,3 @@ jobs:
           type: now
           from_branch: main
           target_branch: release-${{ env.TODAY }}
-          # github_token: ${{ github.token }}
