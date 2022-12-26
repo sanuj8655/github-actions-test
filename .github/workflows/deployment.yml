@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     env:
-      TODAY : '20221227'
+      TODAY : "$(date +%Y%m%d)"
     name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
