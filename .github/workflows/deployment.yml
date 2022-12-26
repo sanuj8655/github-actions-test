@@ -30,6 +30,5 @@ jobs:
       - name: Merge develop -> release
         uses: everlytic/branch-merge@1.1.2
         with:
-          type: now
           source_ref: "main"
           target_branch: release-${{ env.TODAY }}
