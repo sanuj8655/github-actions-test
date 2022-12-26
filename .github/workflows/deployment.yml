@@ -32,5 +32,5 @@ jobs:
         with:
           type: now
           from_branch: main
-          target_branch: uat
-          github_token: release-${{ env.TODAY }}
+          target_branch: release-${{ env.TODAY }}
+          # github_token: release-${{ env.TODAY }}
